@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Edu+TAS+Beginner:wght@400;500&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --blueColor:rgb(20, 20, 71);
+  --greenColor:rgb(32, 161, 52);
+}
+*{
+  font-family: 'Montserrat';
+  margin: 0;
+}
