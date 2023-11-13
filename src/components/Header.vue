@@ -6,7 +6,7 @@
     </div>
     <div class="head-info">
         <p class="title">Okay Stroy</p>
-    <p class="info">EXPERTISE YOU CAN TRUST</p>
+    <p class="info">{{ $t('slogan') }}</p>
     </div>
     
     

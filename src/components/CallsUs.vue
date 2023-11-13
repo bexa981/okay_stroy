@@ -9,16 +9,16 @@ onMounted(() => {
 <template>
     <div class="call-us">
    <div class="call">
-    <p data-aos="zoom-in-up" class="title">CALL US NOW</p>
-   <p data-aos="zoom-in-up" class="info">+998(90)075 7151</p>
+    <p data-aos="zoom-in-up" class="title">{{ $t('call_us') }}</p>
+   <p data-aos="zoom-in-up" class="info">+998(88) 133-96-96</p>
    </div>
    <div class="mail">
-   <p data-aos="zoom-in-up" class="title">EMAIL ADDRESS</p>
+   <p data-aos="zoom-in-up" class="title">{{ $t('email_address') }}</p>
    <p data-aos="zoom-in-up" class="info">okaystroy@gmail.com</p>
    </div>
    <div class="hours">
-  <p data-aos="zoom-in-up" class="title">WORKING HOURS</p>
-  <p data-aos="zoom-in-up" class="info">9:00am - 6:00pm</p>
+  <p data-aos="zoom-in-up" class="title">{{ $t('working_hours') }}</p>
+  <p data-aos="zoom-in-up" class="info">9:00 - 18:00</p>
    </div>
     </div>
 </template>
@@ -27,7 +27,8 @@ onMounted(() => {
 .call-us{
     display: flex;
     justify-content: center;
-    gap: 70px;
+    width: 100%;
+    gap: 10%;
     text-align: center;
     flex-wrap: wrap;
     padding: 40px 0;

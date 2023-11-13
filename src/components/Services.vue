@@ -1,44 +1,57 @@
 <script setup>
-import { onMounted } from "vue";
-import AOS from "aos";
+import { ref } from 'vue';
+import {useRouter} from 'vue-router'
+const router = useRouter()
+const cards = ref([
+    {
+        id: 1,
+        img_url: '/images/service1.webp',
+        title: 'title1',
+        info: 'lorem1'
+    },
+    {
+        id: 2,
+        img_url: '/images/service1.webp',
+        title: 'title2',
+        info: 'lorem1'
+    },
+    {
+        id: 3,
+        img_url: '/images/service1.webp',
+        title: 'title3',
+        info: 'lorem1'
+    },
+    {
+        id: 4,
+        img_url: '/images/service1.webp',
+        title: 'title4',
+        info: 'lorem1'
+    }
+])
 
-onMounted(() => {
-    AOS.init();
-})
+
+
+const navigateToPage = (cardId) => {
+    router.push({ name: 'other', params: { id: cardId } });
+};
+
 </script>
 <template>
     <div class="service-main">
         <div class="bg-service">
-     <div class="bg-image">
+            <div class="bg-image">
 
-     </div>
-            <h2>Our services</h2>
+            </div>
+            <h2>{{ $t('our_services') }}</h2>
         </div>
         <div class="cards">
-            <div class="card" data-aos="flip-down">
-          <img src="/images/service1.webp" alt="" >
-          <p class="title">title</p>
-          <p class="info">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, laborum. Quae corporis deleniti dolor quasi dolorem nemo libero ipsa odio.</p>
-          <button>More...</button>
+            <div v-for="item in cards" :key="item.id" class="card" data-aos="flip-down">
+                <img :src="item.img_url" alt="">
+                <p class="title">{{ item.title }}</p>
+                <p class="info">{{ item.info }}</p>
+                <button @click="()=>navigateToPage(item.id)">More...</button>
             </div>
-            <div class="card" data-aos="flip-down">
-           <img src="/images/service1.webp" alt="" >
-           <p class="title">title</p>
-           <p class="info">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, laborum. Quae corporis deleniti dolor quasi dolorem nemo libero ipsa odio.</p>
-           <button>More...</button>
-            </div>
-            <div class="card" data-aos="flip-down">
-           <img src="/images/service1.webp" alt="" >
-           <p class="title">title</p>
-           <p class="info">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, laborum. Quae corporis deleniti dolor quasi dolorem nemo libero ipsa odio.</p>
-           <button>More...</button>
-            </div>
-            <div class="card" data-aos="flip-down">
-           <img src="/images/service1.webp" alt="">
-           <p class="title">title</p>
-           <p class="info">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, laborum. Quae corporis deleniti dolor quasi dolorem nemo libero ipsa odio.</p>
-           <button>More...</button>
-            </div>
+
 
         </div>
 
@@ -46,29 +59,32 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.bg-image{
+.bg-image {
     width: 100%;
-    height: 40vh;
+    height: 100%;
     position: absolute;
     z-index: 2;
-    background-color:var(--greenColor);
+    background-color: var(--greenColor);
     opacity: .6;
 }
-.bg-service{
+
+.bg-service {
     background-attachment: fixed;
     position: relative;
     width: 100%;
-    height: 40vh;
+    height: 30vh;
     background-image: url('/images/home-repairs.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-.service-main{
+
+.service-main {
     background-color: #f5f5f6;
     padding-bottom: 20px;
 }
-.service-main h2{
+
+.service-main h2 {
     z-index: 3;
     left: 38%;
     position: absolute;
@@ -79,15 +95,17 @@ onMounted(() => {
     font-size: 40px;
     top: 30%;
 }
-.cards{
+
+.cards {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 2%;
     margin: 50px 0;
     flex-wrap: wrap;
 }
-.card{
+
+.card {
     width: 300px;
     border-radius: 5px;
     padding: 10px;
@@ -98,22 +116,26 @@ onMounted(() => {
     justify-content: center;
     align-items: center;
     background-color: #fff;
-    
+    margin-top: 10px;
+
 }
-.card .title{
+
+.card .title {
     font-size: 22px;
     font-weight: 500;
     text-align: center;
     font-family: 'Abril Fatface';
 }
-.card .info{
+
+.card .info {
     line-height: 1.7;
 }
-.card button{
-    padding: 7px; 
+
+.card button {
+    padding: 7px;
     width: 200px;
     text-align: center;
-    background-color:var(--greenColor);
+    background-color: var(--greenColor);
     color: white;
     border: none;
     font-weight: 500;
@@ -122,17 +144,20 @@ onMounted(() => {
     transition: .3s;
     margin-bottom: 10px;
 }
-.card button:hover{
+
+.card button:hover {
     color: rgb(211, 211, 211);
 }
- .card img{
-  width: 100%;
- }
- @media only screen and (max-width: 600px) {
-    .service-main h2{
+
+.card img {
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .service-main h2 {
         text-align: center;
         left: 10%;
         font-size: 35px;
     }
- }
+}
 </style>

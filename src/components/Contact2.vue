@@ -12,35 +12,33 @@ import Mail from './Icons/Mail.vue'
 <template>
     <div class="contact2">
         <div class="social-main">
-            <p data-aos="fade-up" class="title">Social</p>
+            <p data-aos="fade-up" class="title">{{$t('social')}}</p>
             <div data-aos="fade-up" class="social">
-                <a href=""><Telegram2/></a>
-                <a href=""><Facebook2/></a>
-                <a href=""><Instagram2/></a>
-                <a href=""><Youtube2/></a>
+                <a target="_blank" href="https://t.me/okaystroy"><Telegram2/></a>
+                <a target="_blank" href="https://www.facebook.com/okaystroy"><Facebook2/></a>
+                <a target="_blank" href="https://www.instagram.com/remont_okey/"><Instagram2/></a>
+                <a target="_blank" href="#"><Youtube2/></a>
             </div>
         </div>
         <div class="phone">
-            <p data-aos="fade-up" class="title">Phone</p>
-            <p data-aos="fade-up" class="info"> <Phone/> +998-90-075-7151; +998-77-777-7777</p>
+            <p data-aos="fade-up" class="title">{{$t('phone')}}</p>
+            <p data-aos="fade-up" class="info"> <Phone/> +998(88) 133-96-96</p>
 
         </div>
         <div class="address">
-            <p data-aos="fade-up" class="title">Address</p>
-            <p data-aos="fade-up" class="info"><Location/> 2130 Fulton Street, San Diego,
-                <br>
-                CA 94117-1080 USA
+            <p data-aos="fade-up" class="title">{{$t('address')}}</p>
+            <p data-aos="fade-up" class="info"><Location/>  г.Ташкент, ул.Бунёдкор, д.Е-12
             </p>
         </div>
         <div  class="hours">
-            <p data-aos="fade-up" class="title">Open Hours</p>
-            <p data-aos="fade-up" class="info"><Calendar/> Mon-Fri: 9:00am-6:00pm
+            <p data-aos="fade-up" class="title">{{$t('openHours')}}</p>
+            <p data-aos="fade-up" class="info"><Calendar/> {{$t('hours')}}
                 <br>
-                Sat-Sun: 10:00am-5:00pm</p>
+                {{$t('hours2')}}</p>
         </div>
         <div class="email">
-            <p data-aos="fade-up" class="title">E-mail</p>
-            <p data-aos="fade-up" class="info"> <Mail/> okaystroy@gmail.uz</p>
+            <p class="title">{{$t('email')}}</p>
+            <p  class="info"> <Mail/> okaystroy@gmail.uz</p>
 
         </div>
     </div>

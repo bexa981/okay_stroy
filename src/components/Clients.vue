@@ -35,7 +35,7 @@ onMounted(() => {
 
 <template>
     <div class="clients">
-        <h2 data-aos="fade-down">What Our Clients Say</h2>
+        <h2 data-aos="fade-down">{{ $t('clients') }}</h2>
         <div class="cards">
         <div data-aos="fade-up-right" class="card" v-for="item in items" :key="item.id">
         <div class="top-card">

@@ -11,21 +11,38 @@ import Contact from '../components/Contact.vue';
 
 <template>
   <div>
-  <header>
-    <Navbar />
-    <Header/>
-  </header>
-  <main>
-   <CallsUs/>
-   <AboutUs/>
-   <Services/>
-   <Projects/>
-   <Clients/>
- 
-  </main>
+    <header>
+      <section id="section1">
+        <Navbar />
+      <Header />
+      </section>
+    
 
-  <footer>
-    <Contact/>
-  </footer>
-</div>
+
+    </header>
+    <main>
+      <CallsUs />
+      <section id="section2">
+        <AboutUs />
+      </section>
+
+      <section id="section3">
+        <Services />
+
+      </section>
+      <section id="section4">
+        <Projects />
+
+      </section>
+      <Clients />
+
+    </main>
+
+    <footer>
+      <section id="section5">
+        <Contact />
+
+      </section>
+    </footer>
+  </div>
 </template>

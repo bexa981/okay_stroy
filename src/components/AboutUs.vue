@@ -7,16 +7,29 @@ onMounted(() => {
     AOS.init();
 })
 
-const inputValue = ref('');
+const inputValue1 = ref('');
+const inputValue2 = ref('');
+const inputValue3 = ref('');
+const inputValue4 = ref('');
+
+const placeholders={
+    input1:`Имя`,
+    input2:'Фамилия',
+    input3:'Tелефон',
+    input4:'Электронная почта',
+
+}
     
     const clearPlaceholder = (event) => {
       event.target.removeAttribute('placeholder');
     };
 
     const restorePlaceholder = (event) => {
-      event.target.setAttribute('placeholder', 'First name');
+      event.target.setAttribute('placeholder', placeholders[event.target.id]);
     };
-    inputValue,
+    inputValue1,
+    inputValue2,
+    inputValue3,
       clearPlaceholder,
       restorePlaceholder
 </script>
@@ -26,32 +39,31 @@ const inputValue = ref('');
         <div class="about">
             <div class="top" data-aos="zoom-out-up">
                 <p class="num">4</p>
-                <p><span class="year">YEARS</span> <br> <span class="experience">EXPERIENCE</span></p>
+                <p><span class="year">{{ $t('years') }}</span> <br> <span class="experience">{{ $t('experience') }}</span></p>
             </div>
             <div data-aos="zoom-out-up" class="info">
-                <p>Consetetur sadipscing elit diam nonumy eirmod tempor inunt labiore dolore magna aliquyam erat, sed diam
-                    voluptua at vero eos et accusam et justo duo dolores et ea rebum clita kasd gubergren:</p>
+                <p>{{$t('aboutUs') }}</p>
             </div>
 
             <div class="advantages">
      <ul>
-        <li data-aos="fade-right">Reasonable Prices</li>
-        <li data-aos="fade-right">Experienced</li>
-        <li data-aos="fade-right">Reliable</li>
-        <li data-aos="fade-right">Professional</li>
-        <li data-aos="fade-right">Cost Effective</li>
+        <li data-aos="fade-right">{{ $t('service1') }}</li>
+        <li data-aos="fade-right">{{ $t('service2') }}</li>
+        <li data-aos="fade-right">{{ $t('service3') }}</li>
+        <li data-aos="fade-right">{{ $t('service4') }}</li>
+        
      </ul>
             </div>
         </div>
 
         <div class="form" data-aos="fade-up" data-aos-duration="3000">
-      <p>REQUEST A <br> <span>FREE QUOTE</span></p>
+      <p>{{ $t('free') }} <br> <span>{{ $t('maslahat') }}</span></p>
 
       <form action="">
-        <input type="text" v-model="inputValue" @focus="clearPlaceholder" @blur="restorePlaceholder"  placeholder="First name">
-        <input type="text" v-model="inputValue" @focus="clearPlaceholder" @blur="restorePlaceholder"  placeholder="Last name">
-        <input type="text" v-model="inputValue" @focus="clearPlaceholder" @blur="restorePlaceholder"  placeholder="Phone number">
-        <input type="text" v-model="inputValue" @focus="clearPlaceholder" @blur="restorePlaceholder"  placeholder="Address">
+        <input id="input1" type="text" v-model="inputValue1" @focus="clearPlaceholder" @blur="restorePlaceholder"  placeholder="Имя">
+        <input id="input2" type="text" v-model="inputValue2" @focus="clearPlaceholder" @blur="restorePlaceholder"  placeholder="Фамилия">
+        <input id="input3" type="text" v-model="inputValue3" @focus="clearPlaceholder" @blur="restorePlaceholder"  placeholder="Tелефон">
+        <input id="input4" type="text" v-model="inputValue4" @focus="clearPlaceholder" @blur="restorePlaceholder"  placeholder="Электронная почта">
         <button>GET A QUOTE</button>
       </form>
         </div>
@@ -59,7 +71,7 @@ const inputValue = ref('');
         <div class="image" data-aos="fade-left">
    <div class="guarantee">
     <img src="./Icons/shield.png" alt="">
-  <p>All work is <br> Guaranteed</p>
+  <p>{{ $t('guarantee1') }} <br> {{ $t('guarantee2') }} </p>
    </div>
         </div>
     </div>
@@ -72,7 +84,7 @@ const inputValue = ref('');
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    gap: 20px;
+    gap: 5%;
     padding: 100px 0;
 }
 .about{

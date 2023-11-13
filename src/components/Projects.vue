@@ -1,10 +1,10 @@
 
 <script setup>
-import IsotopeGrid from './IsotopeGrid.vue';
+import FilterProjects from './FilterProjects.vue';
 </script>
 <template>
     <div>
     <!-- Other content in your application -->
-    <IsotopeGrid />
+    <FilterProjects />
   </div>
 </template>

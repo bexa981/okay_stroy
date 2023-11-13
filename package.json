@@ -8,10 +8,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/isotope-layout": "^3.0.12",
     "aos": "^2.3.4",
     "isotope-layout": "^3.0.6",
-    "vue": "^3.3.4",
-    "vue-router": "^4.2.5"
+    "vue": "^3.2.36",
+    "vue-i18n": "^9.6.5",
+    "vue-router": "^4.2.5",
+    "vueisotope": "^3.1.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.4.0",
