@@ -7,6 +7,7 @@ import Services from '../components/Services.vue';
 import Projects from '../components/Projects.vue';
 import Clients from '../components/Clients.vue';
 import Contact from '../components/Contact.vue';
+import WhyisMe from '../components/WhyisMe.vue';
 </script>
 
 <template>
@@ -14,9 +15,9 @@ import Contact from '../components/Contact.vue';
     <header>
       <section id="section1">
         <Navbar />
-      <Header />
+        <Header />
       </section>
-    
+
 
 
     </header>
@@ -25,7 +26,7 @@ import Contact from '../components/Contact.vue';
       <section id="section2">
         <AboutUs />
       </section>
-
+      <WhyisMe />
       <section id="section3">
         <Services />
 

@@ -14,7 +14,7 @@
     "experience":"TAJRIBA",
     "aboutUs":"“Okay Stroy” Toshkent shahrida 2019-yildan buyon faoliyat ko‘rsatib kelmoqda. Shu qisqa vaqt ichida 100 dan ortiq ob’yekt amalga oshirilib, foydalanishga topshirildi. Ushbu davr mobaynida biz TOP bozor yetakchilari qatoriga kiritilgan turli maqsadlar uchun binolarni ichki bezatish kompaniyasiga aylanishga muvaffaq bo'ldik. Biz quyidagi ish turlarini bajaramiz:",
     "service1":"Kalitgacha tamirlash",
-    "service2":"Строительство частных домов и коттеджей с нуля",
+    "service2":"Xususiy uylar va kottejlarni noldan qurish",
     "service3":"Fasad ishlari",
     "service4":"Dizayn va interyer dizayni",
     "guarantee1":"Barcha Xizmatlar",
@@ -34,7 +34,18 @@
     "sendMessage":"Xabar jo'natish",
     "hours":"Dush-Jum: 9:00-18:00",
     "hours2":"Shan-Yak:Dam olish",
-    "openHours":"Ish vaqti"
+    "openHours":"Ish vaqti",
+    "whyme":"Nega aynan biz?",
+    "guarantee":"Ta'mirlash kafolati",
+    "otchot":"Hisobotlar",
+    "seni":"Qulay narxlar",
+    "dogovor":"Rasmiy kelishuv",
+    "podarok":"Sovg'a sifatida",
+    "guarantee_info":"Uch yil davomida biz amalga oshirilgan barcha ta'mirlash ishlariga rasmiy kafolat beramiz.",
+    "otchot_info":"Siz barcha ta'mirlash xarajatlarini bilib olasiz. Bosqichma-bosqich",
+    "seni_info":"Biz qurilish materiallarini ulgurji sotuvchimiz, barcha chegirmalar sizning foydangizga",
+    "dogovor_info":"Biz rasmiy kompaniya shartnomasini tuzamiz",
+    "podarok_info":"Shartnoma tuzishda biz xona dizayni loyihasini beramiz"
    
     
 }
