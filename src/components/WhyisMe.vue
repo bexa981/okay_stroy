@@ -23,7 +23,7 @@
                 <p>{{ $t('seni_info') }}</p>
             </div>
             <div class="card">
-                <img src="../components/Icons/contract (2).png" alt="">
+                <img src="../components/Icons/contract2.png" alt="">
                 <h3>{{ $t('dogovor') }}</h3>
                 <p>{{ $t('dogovor_info') }}</p>
             </div>
