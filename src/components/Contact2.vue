@@ -31,8 +31,8 @@ import Mail from './Icons/Mail.vue'
             </p>
         </div>
         <div  class="hours">
-            <p data-aos="fade-up" class="title">{{$t('openHours')}}</p>
-            <p data-aos="fade-up" class="info"><Calendar/> {{$t('hours')}}
+            <p  class="title">{{$t('openHours')}}</p>
+            <p  class="info"><Calendar/> {{$t('hours')}}
                 <br>
                 {{$t('hours2')}}</p>
         </div>

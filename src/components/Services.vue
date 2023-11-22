@@ -5,26 +5,32 @@ const router = useRouter()
 const cards = ref([
     {
         id: 1,
-        img_url: '/images/service1.webp',
-        title: 'title1',
+        img_url: '/images/projects/kluch2.jpg',
+        title: 'КАЧЕСТВЕННЫЙ РЕМОНТ РЕМОНТ ПОД КЛЮЧ',
         info: 'lorem1'
     },
     {
         id: 2,
-        img_url: '/images/service1.webp',
-        title: 'title2',
+        img_url: '/images/projects/chastniy2.jpg',
+        title: 'СТРОИТЕЛЬСТВО ЧАСТНЫХ ДОМОВ И КОММЕРЧЕСКИХ ОБЪЕКТОВ',
         info: 'lorem1'
     },
     {
         id: 3,
-        img_url: '/images/service1.webp',
-        title: 'title3',
+        img_url: '/images/projects/fasad.jpg',
+        title: 'ФАСАДНЫЕ РАБОТЫ ДОМОВ',
         info: 'lorem1'
     },
     {
         id: 4,
-        img_url: '/images/service1.webp',
-        title: 'title4',
+        img_url: '/images/projects/loyiha.jpg',
+        title: 'Проектирование и дизайн-интерьер',
+        info: 'lorem1'
+    },
+    {
+        id: 5,
+        img_url: '/images/projects/metal3.jpg',
+        title: 'ИЗГОТАВЛИВАЕМ ИЗ МЕТАЛОКОНСТРУКЦИИ',
         info: 'lorem1'
     }
 ])
@@ -48,8 +54,8 @@ const navigateToPage = (cardId) => {
             <div v-for="item in cards" :key="item.id" class="card" data-aos="flip-down">
                 <img :src="item.img_url" alt="">
                 <p class="title">{{ item.title }}</p>
-                <p class="info">{{ item.info }}</p>
-                <button @click="()=>navigateToPage(item.id)">More...</button>
+             
+                <button @click="()=>navigateToPage(item.title)">{{ $t('more') }}...</button>
             </div>
 
 
@@ -77,6 +83,9 @@ const navigateToPage = (cardId) => {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+.title{
+    text-transform: uppercase;
 }
 
 .service-main {
@@ -107,13 +116,14 @@ const navigateToPage = (cardId) => {
 
 .card {
     width: 300px;
+    height: 400px;
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0px 0px 10px rgb(173, 173, 173);
     gap: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background-color: #fff;
     margin-top: 10px;

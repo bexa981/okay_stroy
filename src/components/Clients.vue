@@ -7,6 +7,21 @@ import AOS from "aos";
 onMounted(() => {
     AOS.init();
 })
+const downloadFile = () => {
+      // Replace the placeholder URL with the actual URL of the file you want to download
+      const fileUrl = '/images/file/politica.docx';
+
+      // Create a link element
+      const link = document.createElement('a');
+      link.href = fileUrl;
+      link.target = '_blank';
+      link.download = 'Политика конфиденциальности.docx';
+
+      // Trigger a click event to start the download
+      link.click();
+    };
+
+    downloadFile
 
  const items = ref([{
     id:1,
@@ -53,6 +68,7 @@ onMounted(() => {
         </div>
     </div>
     </div>
+    <button @click="downloadFile" class="dowloadFile">{{ $t('politic') }}</button>
     </div>
     
     
@@ -62,12 +78,25 @@ onMounted(() => {
 
 .clients{
     background-attachment: fixed;
+    display: block;
+    flex-direction: column;
+    text-align: center;
     padding: 100px 0;
     margin-bottom: 100px;
     background-image: url('https://www.teradici.com/images/default-source/background-images/desktop-access-background.jpg?sfvrsn=8cc22298_2');
     background-size: cover;
     background-position: center;
 }
+.dowloadFile{
+   margin-top: 30px;
+   padding: 10px;
+   font-size: 18px;
+   font-weight: 500;
+   cursor: pointer;
+   border: none;
+   background-color: white;
+}
+
 .clients h2{
     text-align: center;
     font-size: 40px;

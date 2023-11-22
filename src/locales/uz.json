@@ -45,7 +45,14 @@
     "otchot_info":"Siz barcha ta'mirlash xarajatlarini bilib olasiz. Bosqichma-bosqich",
     "seni_info":"Biz qurilish materiallarini ulgurji sotuvchimiz, barcha chegirmalar sizning foydangizga",
     "dogovor_info":"Biz rasmiy kompaniya shartnomasini tuzamiz",
-    "podarok_info":"Shartnoma tuzishda biz xona dizayni loyihasini beramiz"
+    "podarok_info":"Shartnoma tuzishda biz xona dizayni loyihasini beramiz",
+    "more":"Ko'proq",
+    "all":"Barchasi",
+    "filter1":"YOTOQXONA",
+    "filter2":"Ichki dizayn",
+    "filter3":"bolalar xonasi",
+    "filter4":"Neoklassika",
+    "politic":"Maxfiylik siyosati"
    
     
 }
