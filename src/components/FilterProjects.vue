@@ -1,33 +1,6 @@
-<template>
-  <div>
-    <div class="btns">
-      <button :class="{ active: activeFilter === 'all' }" @click="filterItems('all')">{{ $t('all') }}</button>
-      <button :class="{ active: activeFilter === 'filter-1' }" @click="filterItems('filter-1')">{{ $t('filter1') }}</button>
-      <button :class="{ active: activeFilter === 'filter-2' }" @click="filterItems('filter-2')">{{ $t('filter2') }}</button>
-      <button :class="{ active: activeFilter === 'filter-3' }" @click="filterItems('filter-3')">{{ $t('filter4') }}</button>
-      <button :class="{ active: activeFilter === 'filter-4' }" @click="filterItems('filter-4')">{{ $t('filter3') }}</button>
-      <!-- Add more filter buttons as needed -->
-    </div>
-    <transition name="fade" mode="out-in">
-    <div :key="activeFilter" class="images animated-container">
-      <div v-for="item in filteredItems" :key="item.id">
-        <img  class="full-screen-trigger"  @click="toggleFullScreen" :src="item.src" alt="">
-        <img  class="full-screen-trigger"  @click="toggleFullScreen"  :src="item.src2" alt="">
-        <img  class="full-screen-trigger"  @click="toggleFullScreen"  :src="item.src3" alt="">
-        <img  class="full-screen-trigger"  @click="toggleFullScreen"  :src="item.src4" alt="">
-        <img  class="full-screen-trigger"  @click="toggleFullScreen"  :src="item.src5" alt="">
-        <img  class="full-screen-trigger"  @click="toggleFullScreen"  :src="item.src6" alt="">
-      </div>
-    </div>
-    </transition>
-    <div v-if="isFullScreen" class="full-screen-overlay" @click="closeFullScreen">
-      <img :src="imgUrl" :style="{ filter: filterStyle }" alt="Filtered Image" class="full-screen-image" />
-    </div>
-  </div>
-</template>
-
 <script>
 import { ref, computed } from 'vue';
+
 
 export default {
   setup() {
@@ -38,22 +11,26 @@ export default {
       { id: 4, src: '/images/projects/detskiy1.jpg',src2: '/images/projects/detskiy2.jpg',src3: '/images/projects/detskiy3.jpg',src4: '/images/projects/detskiy4.jpg',src5: '/images/projects/detskiy5.jpg',src6: '/images/projects/detskiy6.jpg', class: 'filter-4' },
       // Add more items with respective classes for filtering
     ]);
-    const imgUrl = ref([{}])
-    const isFullScreen = ref(false);
+
     const filterStyle = ref('none'); // Default filter style
     const activeFilter = ref('all');
 
-    const toggleFullScreen = () => {
-      isFullScreen.value = !isFullScreen.value;
-      if( (imgUrl.value == items.src)||(imgUrl.value==items.src2)){
-        return imgUrl.value
-      }
-     
+    const isFullScreenVisible = ref(false);
+    const fullScreenImage = ref('');
+    
+
+    const openFullScreen = (item) => {
+      fullScreenImage.value = item;
+      isFullScreenVisible.value = true;
     };
 
     const closeFullScreen = () => {
-      isFullScreen.value = false;
+      isFullScreenVisible.value = false;
     };
+
+   
+
+    
  
     const applyFilter = () => {
       filterStyle.value = 'grayscale(100%)'; // Example: Grayscale filter
@@ -71,15 +48,15 @@ export default {
     });
 
     return {
+      openFullScreen,
       filterItems,
+      fullScreenImage,
       filteredItems,
       activeFilter,
-      isFullScreen,
+      isFullScreenVisible,
       filterStyle,
-      toggleFullScreen,
       closeFullScreen,
       applyFilter,
-      imgUrl
    
     
     };
@@ -87,13 +64,48 @@ export default {
 };
 </script>
 
+<template>
+  <div>
+    <div class="btns">
+      <button :class="{ active: activeFilter === 'all' }" @click="filterItems('all')">{{ $t('all') }}</button>
+      <button :class="{ active: activeFilter === 'filter-1' }" @click="filterItems('filter-1')">{{ $t('filter1') }}</button>
+      <button :class="{ active: activeFilter === 'filter-2' }" @click="filterItems('filter-2')">{{ $t('filter2') }}</button>
+      <button :class="{ active: activeFilter === 'filter-3' }" @click="filterItems('filter-3')">{{ $t('filter4') }}</button>
+      <button :class="{ active: activeFilter === 'filter-4' }" @click="filterItems('filter-4')">{{ $t('filter3') }}</button>
+      <!-- Add more filter buttons as needed -->
+    </div>
+    <transition name="fade" mode="out-in">
+    <div :key="activeFilter" class="images animated-container">
+      <div v-for="item in filteredItems" :key="item.id">
+        <img  class="full-screen-trigger"  @click="openFullScreen(item.src)" :src="item.src" alt="">
+        <img  class="full-screen-trigger" @click="openFullScreen(item.src2)"  :src="item.src2" alt="">
+        <img  class="full-screen-trigger"  @click="openFullScreen(item.src3)"  :src="item.src3" alt="">
+        <img  class="full-screen-trigger"  @click="openFullScreen(item.src4)"  :src="item.src4" alt="">
+        <img  class="full-screen-trigger"  @click="openFullScreen(item.src5)"  :src="item.src5" alt="">
+        <img  class="full-screen-trigger"  @click="openFullScreen(item.src6)"  :src="item.src6" alt="">
+        
+      </div>
+      <div v-if="isFullScreenVisible" class="full-screen-overlay" @click="closeFullScreen">
+      <img :src="fullScreenImage" alt="Full Screen Image" class="full-screen-image">
+    </div>
+    </div>
+    </transition>
+   
+  </div>
+</template>
+
+
+
 <style scoped>
 .full-screen-trigger {
   cursor: pointer;
   width: 300px;
+  transition: .3s;
   /* Add additional styling for the thumbnail image if needed */
 }
-
+.full-screen-trigger:hover{
+  transform: scale(1.1);
+}
 .full-screen-overlay {
   position: fixed;
   top: 0;
@@ -102,14 +114,16 @@ export default {
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
   display: flex;
-  align-items: center;
+  z-index: 10;
   justify-content: center;
-  z-index: 999;
+  align-items: center;
+  cursor: pointer;
 }
 
 .full-screen-image {
-  max-width: 100%;
-  max-height: 100%;
+  width: 80%;
+  height: 80%!important;
+  margin-top: 10%;
 }
 .active {
   /* Add your desired color for the active button */
@@ -127,16 +141,11 @@ export default {
   opacity: 0;
 }
 
-img {
- 
-  transition: .3s;
-}
+
 .images img{
   height: 200px;
 }
-img:hover {
-  transform: scale(1.1);
-}
+
 
 .images {
   display: flex;
@@ -174,6 +183,11 @@ img:hover {
    align-items: center;
    text-align: center;
   }
+  .full-screen-image {
+  width: 90%;
+  height: 30%!important;
+  margin-top: 10%;
+}
 }
 
 </style>

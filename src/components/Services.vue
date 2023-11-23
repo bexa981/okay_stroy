@@ -1,7 +1,8 @@
 <script setup>
-import { ref } from 'vue';
-import {useRouter} from 'vue-router'
-const router = useRouter()
+   import { ref } from 'vue';
+   import {useRouter} from 'vue-router'
+const router = useRouter();
+
 const cards = ref([
     {
         id: 1,
@@ -36,9 +37,11 @@ const cards = ref([
 ])
 
 
-
 const navigateToPage = (cardId) => {
-    router.push({ name: 'other', params: { id: cardId } });
+    router.push(
+        { name: 'other', params: { id: cardId }
+     
+    });
 };
 
 </script>
@@ -50,11 +53,12 @@ const navigateToPage = (cardId) => {
             </div>
             <h2>{{ $t('our_services') }}</h2>
         </div>
+
         <div class="cards">
-            <div v-for="item in cards" :key="item.id" class="card" data-aos="flip-down">
+
+            <div v-for="item in cards" :key="item.id" class="card" data-aos="flip-down">    
                 <img :src="item.img_url" alt="">
-                <p class="title">{{ item.title }}</p>
-             
+                <p class="title">{{ item.title }}</p> 
                 <button @click="()=>navigateToPage(item.title)">{{ $t('more') }}...</button>
             </div>
 
