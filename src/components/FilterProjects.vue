@@ -123,7 +123,7 @@ export default {
 .full-screen-image {
   width: 80%;
   height: 80%!important;
-  margin-top: 10%;
+  margin: 10px;
 }
 .active {
   /* Add your desired color for the active button */
