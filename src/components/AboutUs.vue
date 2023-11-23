@@ -64,7 +64,7 @@ const placeholders={
         <input id="input2" type="text" v-model="inputValue2" @focus="clearPlaceholder" @blur="restorePlaceholder"  placeholder="Фамилия">
         <input id="input3" type="text" v-model="inputValue3" @focus="clearPlaceholder" @blur="restorePlaceholder"  placeholder="Tелефон">
         <input id="input4" type="text" v-model="inputValue4" @focus="clearPlaceholder" @blur="restorePlaceholder"  placeholder="Электронная почта">
-        <button>GET A QUOTE</button>
+        <button>{{ $t('zayafka') }}</button>
       </form>
         </div>
 
