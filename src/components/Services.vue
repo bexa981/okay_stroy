@@ -37,9 +37,9 @@ const cards = ref([
 ])
 
 
-const navigateToPage = (cardId) => {
+const navigateToPage = (cardId,title,info) => {
     router.push(
-        { name: 'other', params: { id: cardId }
+        { name: 'other', params: { id: cardId },props:{title,info}
      
     });
 };
@@ -59,7 +59,7 @@ const navigateToPage = (cardId) => {
             <div v-for="item in cards" :key="item.id" class="card" data-aos="flip-down">    
                 <img :src="item.img_url" alt="">
                 <p class="title">{{ item.title }}</p> 
-                <button @click="()=>navigateToPage(item.title)">{{ $t('more') }}...</button>
+                <button @click="()=>navigateToPage(item.id,item.info,item.title)">{{ $t('more') }}...</button>
             </div>
 
 

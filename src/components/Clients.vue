@@ -25,24 +25,24 @@ const downloadFile = () => {
 
  const items = ref([{
     id:1,
-    img:'/images/clients/client1.jpg',
-    name:'Christian Dior',
-    job:'Web Designer',
-    info:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque eum iure sequi, a aspernatur obcaecati quia vero amet vitae?'
+    img:'/images/clients/ozod.jpg',
+    name:'Ozodbek Nazarbekov',
+    job:'Madaniyat Vaziri',
+    info:'Juda ham ajoyib sifatli ishlar qilishgan, menga juda ham maqul keldi, barcha talablarga javob beradi. Eng asosiysi ishonchli va sizlarga ham tavsiya qilib qolaman.'
  },
  {
     id:2,
-    img:'/images/clients/client1.jpg',
-    name:'Lionel Messi',
-    job:'Economic',
-    info:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque eum iure sequi, a aspernatur obcaecati quia vero amet vitae?'
+    img:'/images/clients/sardor.jpg',
+    name:"Sardor Rashidov",
+    job:'Proffesional Fudbolchi',
+    info:'Barcha xizmataridan foydalandim,ularning barchasi juda sifatli qilindi va muximi kafolat bilan albatta. Men sizlarga Ok-stroy ni tavsiya qilib qolaman.'
  },
  {
     id:3,
-    img:'/images/clients/client1.jpg',
-    name:'Cristiano Ronaldo',
-    job:'Journalist',
-    info:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque eum iure sequi, a aspernatur obcaecati quia vero amet vitae?'
+    img:'/images/clients/xamdam.jpg',
+    name:'Xamdam Sobirov',
+    job:'Honanda',
+    info:'Assalomu alekum barchaga Men okay stroyga juda katta minadorchilik bildiraman ular sabab ajoib va shinam xonadonga ega bo`ldim. Barcha ishlarini juda sifatli va maxorat bilan qilishadi.'
  }
  
 ])

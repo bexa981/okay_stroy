@@ -53,7 +53,14 @@
     "filter3":"bolalar xonasi",
     "filter4":"Neoklassika",
     "politic":"Maxfiylik siyosati",
-    "zayafka":"So'rov qoldiring"
+    "zayafka":"So'rov qoldiring",
+    "serviceCards": {
+        "1": "Quality Turnkey Repair",
+        "2": "Construction of Private Houses and Commercial Buildings",
+        "3": "Facade Works for Houses",
+        "4": "Interior Design and Planning",
+        "5": "Manufacturing Metal Constructions"
+      }
    
     
 }

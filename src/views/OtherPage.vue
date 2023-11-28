@@ -1,11 +1,12 @@
 <script setup>
 import Navbar from '../components/Navbar.vue';
-
+const props = defineProps(['title','info'])
 </script>
 <template>
 <Navbar/>
     <div class="service-main">
         <h1>{{ $route.params.id }} </h1>
+        <h1>{{ props.title }}</h1>
         
     <table border="">
         <tr>
