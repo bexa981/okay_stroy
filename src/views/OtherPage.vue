@@ -1,25 +1,28 @@
 <script setup>
 import Navbar from '../components/Navbar.vue';
-const props = defineProps(['title','info'])
+import {useRoute} from 'vue-router'
+const route = useRoute();
 </script>
 <template>
 <Navbar/>
     <div class="service-main">
-        <h1>{{ $route.params.id }} </h1>
-        <h1>{{ props.title }}</h1>
+        <h1> {{ route.query.info|| '?' }}</h1>
         
     <table border="">
         <tr>
-            <th>Service 1</th>
-            <th>Service 2 </th>
-            <th>Service 3</th>
-            <th>Service 4</th>
+            <td>{{ route.query.info1|| '' }}</td>
+            <td>{{ route.query.info2|| '' }} </td>
+            <td>{{ route.query.info3|| '' }}</td>
+            <td>{{ route.query.info4|| '' }}</td>
+        </tr>
+        <tr colspan="4">
+            <td>{{ route.query.bioTitle|| '' }}</td>
         </tr>
         <tr>
-            <td>Service info1</td>
-            <td>Service info2</td>
-            <td>Service info3</td>
-            <td>Service info4</td>
+            <td>{{ route.query.bio1|| '' }}</td>
+            <td>{{ route.query.bio2|| '' }}</td>
+            <td>{{ route.query.bio3|| '' }}</td>
+            <td>{{ route.query.bio4|| '' }}</td>
         </tr>
     </table>
     </div>

@@ -12,8 +12,8 @@ import Mail from './Icons/Mail.vue'
 <template>
     <div class="contact2">
         <div class="social-main">
-            <p data-aos="fade-up" class="title">{{$t('social')}}</p>
-            <div data-aos="fade-up" class="social">
+            <p  class="title">{{$t('social')}}</p>
+            <div  class="social">
                 <a target="_blank" href="https://t.me/okaystroy"><Telegram2/></a>
                 <a target="_blank" href="https://www.facebook.com/okaystroy"><Facebook2/></a>
                 <a target="_blank" href="https://www.instagram.com/remont_okey/"><Instagram2/></a>
@@ -21,13 +21,13 @@ import Mail from './Icons/Mail.vue'
             </div>
         </div>
         <div class="phone">
-            <p data-aos="fade-up" class="title">{{$t('phone')}}</p>
-            <p data-aos="fade-up" class="info"> <Phone/> +998(88) 133-96-96</p>
+            <p class="title">{{$t('phone')}}</p>
+            <p class="info"> <Phone/> +998(88) 133-96-96</p>
 
         </div>
         <div class="address">
-            <p data-aos="fade-up" class="title">{{$t('address')}}</p>
-            <p data-aos="fade-up" class="info"><Location/>  г.Ташкент, ул.Бунёдкор, д.Е-12
+            <p  class="title">{{$t('address')}}</p>
+            <p class="info"><Location/>  г.Ташкент, ул.Бунёдкор, д.Е-12
             </p>
         </div>
         <div  class="hours">

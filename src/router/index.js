@@ -9,7 +9,6 @@ const router = createRouter({
       path: "/other/:id",
       name: "other",
       component: OtherPage,
-      props: true,
     },
     {
       path: "/",
