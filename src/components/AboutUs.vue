@@ -120,7 +120,9 @@ const placeholders={
 }
 .info p{
     width: 350px;
-    line-height: 1.5;
+    line-height: 1.6;
+    letter-spacing: 0px;
+    text-align: justify;
     font-size: 20px;
     margin: 20px 0px;
     color: rgb(132, 132, 132);

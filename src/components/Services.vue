@@ -1,23 +1,25 @@
 <script setup>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router'
+
 const router = useRouter();
 
 const cards = ref([
     {
         id: 1,
         img_url: '/images/projects/kluch2.jpg',
-        title: 'КАЧЕСТВЕННЫЙ РЕМОНТ РЕМОНТ ПОД КЛЮЧ',
-        info1: 'ДИЗАЙНЕРСКИЙ РЕМОНТ',
-        info2: "КАПИТАЛЬНЫЙ РЕМОНТ",
-        info3: "КОСМЕТИЧЕСКИЙ РЕМОНТ",
-        info4: "РЕМОНТ САНУЗЛОВ",
-        bioTitle: "ЗАКАЖИТЕ РЕМОНТ У НАС И ПОЛУЧИТЕ:",
-        bio1: "ОФИЦИАЛЬНЫЕ ГАРАНТИИ НА НАШИ РАБОТЫ ",
-        bio2: "ДИЗАЙН-ИНТЕРЬЕР В ПОДАРОК ",
-        bio3: "ОФИАЛЬНЫЙ ДОГОВОР ",
-        bio4: "СОБЛЮДЕНИЕ СРОКОВ  "
+        title: 'КАЧЕСТВЕННЫЙ РЕМОНТ РЕМОНТ ПОД КЛЮЧ' ,
+        info1: 'ДИЗАЙНЕРСКИЙ РЕМОНТ' ,
+        info2:  'КАПИТАЛЬНЫЙ РЕМОНТ' ,
+        info3:  'КОСМЕТИЧЕСКИЙ РЕМОНТ' ,
+        info4: 'РЕМОНТ САНУЗЛОВ' ,
+        bioTitle:  'ЗАКАЖИТЕ РЕМОНТ У НАС И ПОЛУЧИТЕ:' ,
+        bio1: 'ОФИЦИАЛЬНЫЕ ГАРАНТИИ НА НАШИ РАБОТЫ' ,
+        bio2: 'ДИЗАЙН-ИНТЕРЬЕР В ПОДАРОК' ,
+        bio3:  'ОФИАЛЬНЫЙ ДОГОВОР' ,
+        bio4:  'СОБЛЮДЕНИЕ СРОКОВ' 
     },
+    
     {
         id: 2,
         img_url: '/images/projects/chastniy2.jpg',
@@ -58,14 +60,16 @@ const cards = ref([
         bio4: "СОБЛЮДЕНИЕ СРОКОВ  "
     }
 ])
-
-
-const navigateToPage = (cardId, title, info,info1,info2,info3,info4,bioTitle,bio1,bio2, bio3,bio4) => {
+ 
+console.log(cards);
+const navigateToPage = (cardId, img_url, title, info,info1,info2,info3,info4,bioTitle,bio1,bio2, bio3,bio4) => {
     router.push(
         {
-            name: 'other', params: { id: cardId }, query: { title, info,info1,info2,info3,info4,bioTitle,bio1, bio2,bio3,bio4}
+            name: 'other', params: { id: cardId }, query: {img_url, title, info,info1,info2,info3,info4,bioTitle,bio1, bio2,bio3,bio4}
 
         });
+        
+       
 };
 </script>
 <template>
@@ -82,7 +86,8 @@ const navigateToPage = (cardId, title, info,info1,info2,info3,info4,bioTitle,bio
             <div v-for="item in cards" :key="item.id" class="card" data-aos="flip-down">
                 <img :src="item.img_url" alt="">
                 <p class="title">{{ item.title }}</p>
-                <button @click="() => navigateToPage(item.id, item.info, item.title,item.info1,item.info2,item.info3,item.info4,item.bioTitle,item.bio1 , item.bio2, item.bio3,item.bio4)">{{ $t('more') }}...</button>
+               
+                <button @click="() => navigateToPage(item.id, item.info, item.img_url, item.title,item.info1,item.info2,item.info3,item.info4,item.bioTitle,item.bio1 , item.bio2, item.bio3,item.bio4)">{{ $t('more') }}...</button>
             </div>
 
 

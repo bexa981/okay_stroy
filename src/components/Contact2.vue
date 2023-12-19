@@ -38,7 +38,7 @@ import Mail from './Icons/Mail.vue'
         </div>
         <div class="email">
             <p class="title">{{$t('email')}}</p>
-            <p  class="info"> <Mail/> okaystroy@gmail.uz</p>
+            <p  class="info"> <Mail/> okaystroy@gmail.com</p>
 
         </div>
     </div>

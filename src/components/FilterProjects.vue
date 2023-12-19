@@ -188,6 +188,10 @@ export default {
   height: 30%!important;
   margin-top: 10%;
 }
+.btns{
+  display: flex;
+   flex-direction: column;
+}
 }
 
 </style>
