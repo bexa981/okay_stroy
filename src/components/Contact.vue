@@ -3,7 +3,7 @@ import Contact2 from './Contact2.vue';
 </script>
 <template>
     <div class="contact">
-        <div  class="form">
+        <div class="form">
             <div class="info">
                 <h2>{{ $t('getInTouch') }}</h2>
 

@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import { onMounted } from "vue";
 import AOS from "aos";
+import video1 from '/video/video1.mp4'
 
 onMounted(() => {
     AOS.init();
@@ -68,12 +69,18 @@ const placeholders={
       </form>
         </div>
 
-        <div class="image" data-aos="fade-left">
+        <div class="video">
+            <div  class="player-container">
+                <vue3-video-player class="video1" src="/video/video1.mp4"></vue3-video-player>
+            </div>
+        </div>
+
+        <!-- <div class="image" data-aos="fade-left">
    <div class="guarantee">
     <img src="./Icons/shield.png" alt="">
   <p>{{ $t('guarantee1') }} <br> {{ $t('guarantee2') }} </p>
    </div>
-        </div>
+        </div> -->
     </div>
 </template>
 
@@ -91,6 +98,15 @@ const placeholders={
     display: flex;
     flex-direction: column;
     width: 400px;
+}
+.video1{
+    width: 200px;
+    height: 240px;
+}
+.player-container {
+    width: 440px;
+    height: 500px;
+   
 }
 .top{
     display: flex;
